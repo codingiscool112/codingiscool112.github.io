@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+   <title>Study Sphere</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net">
+   <style>
+     body { padding: 20px; max-width: 800px; margin: auto }
+    .class-card { border: 1px solid #ccc; padding: 10px; margin-top: 10px; border-radius: 8px; background: #f9f9f9; }
+     </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Study Sphere</h1>
+    <p>Organize your semester, learn along the way.</p>
+  </header>
+  <main class="container">
+    <section>
+      <h3>Add a Class</h3>
+      <input type="text" id="classInput" placeholder="e.g., AP World History">
+      <button onclick="addClass()">Add to My Schedule</button>
+    </section>
+    <section id="classListSection">
+      <h3>Your Schedule</h3>
+      <div id="classList"></div>
+    </section>
+    <hr>
+    <section>
+      <h3>Ask the AI Study Bot</h3>
+      <textarea id="chatInput" placeholder="Summarize the causes for the revolutionary war."></textarea>
+      <button onclick="askAI()">Ask Bot</button>
+      <div id="chatResponse" class="class-card" style="display:none; color: #222; "></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
