@@ -1,1 +1,62 @@
+:root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --blue: #58a6ff;
+    --green: #3fb950;
+    --purple: #bc8cff;
+    --text: #c9d1d9;
+    --danger: #f85149;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container { width: 100%; max-width: 650px; }
+
+.card {
+    background: var(--card);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.card:hover { border-color: var(--blue); }
+
+h1 { color: var(--blue); text-align: center; letter-spacing: 4px; }
+
+/* Progress Bar Styles */
+.progress-bg { background: #30363d; border-radius: 20px; height: 12px; width: 100%; margin-top: 10px; }
+.progress-fill { 
+    background: linear-gradient(90deg, var(--blue), var(--purple)); 
+    height: 100%; border-radius: 20px; width: 0%; transition: width 1.5s ease-in-out; 
+}
+
+/* Button & Text Styles */
+.btn-group { display: flex; gap: 15px; margin-top: 15px; }
+button {
+    background: transparent; border: 1px solid var(--green);
+    color: var(--green); padding: 10px 20px; cursor: pointer; transition: 0.2s;
+}
+button:hover { background: var(--green); color: white; }
+
+.neon-blue { color: var(--blue); }
+.neon-green { color: var(--green); }
+.neon-purple { color: var(--purple); }
+.success { color: var(--green); font-weight: bold; }
+.danger { color: var(--danger); font-weight: bold; }
+
+/* Animations */
+.blink { animation: blinker 1s step-end infinite; }
+@keyframes blinker { 50% { opacity: 0; } }
+
+.pulse { animation: pulse-anim 2s infinite; }
+@keyframes pulse-anim { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
 
