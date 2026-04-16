@@ -1,37 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-   <title>Study Sphere</title>
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net">
-   <style>
-     body { padding: 20px; max-width: 800px; margin: auto }
-    .class-card { border: 1px solid #ccc; padding: 10px; margin-top: 10px; border-radius: 8px; background: #f9f9f9; }
-     </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Circuit | V1.0</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Study Sphere</h1>
-    <p>Organize your semester, learn along the way.</p>
-  </header>
-  <main class="container">
-    <section>
-      <h3>Add a Class</h3>
-      <input type="text" id="classInput" placeholder="e.g., AP World History">
-      <button onclick="addClass()">Add to My Schedule</button>
-    </section>
-    <section id="classListSection">
-      <h3>Your Schedule</h3>
-      <div id="classList"></div>
-    </section>
-    <hr>
-    <section>
-      <h3>Ask the AI Study Bot</h3>
-      <textarea id="chatInput" placeholder="Summarize the causes for the revolutionary war."></textarea>
-      <button onclick="askAI()">Ask Bot</button>
-      <div id="chatResponse" class="class-card" style="display:none; color: #222; "></div>
-    </section>
-  </main>
-  <script src="script.js"></script>
+
+    <div class="container">
+        <header>
+            <h1>STUDY CIRCUIT <span class="blink">_</span></h1>
+            <p id="date-display"></p>
+        </header>
+
+        <!-- DASHBOARD SECTION -->
+        <section class="card">
+            <h2 class="neon-blue">📅 DEADLINE TRACKER</h2>
+            <div class="timer-box">
+                <p id="math-timer">Loading countdown...</p>
+                <p id="jmun-timer">Loading countdown...</p>
+            </div>
+        </section>
+
+        <!-- QUIZ SECTION -->
+        <section class="card">
+            <h2 class="neon-green">🧠 QUIZ CIRCUIT</h2>
+            <div id="quiz-box">
+                <p id="question">Loading next challenge...</p>
+                <div class="btn-group">
+                    <button onclick="checkAnswer(true)">TRUE</button>
+                    <button onclick="checkAnswer(false)">FALSE</button>
+                </div>
+                <p id="feedback"></p>
+            </div>
+        </section>
+
+        <!-- SYSTEM STATUS -->
+        <section class="card">
+            <h2 class="neon-purple">🛠️ SYSTEM STATUS</h2>
+            <ul class="stats">
+                <li>TIKTOK: <span class="danger">OFFLINE</span></li>
+                <li>TENNIS MODE: <span class="success">ACTIVE (4/7)</span></li>
+                <li>FOCUS: <span class="success">OPTIMAL</span></li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
