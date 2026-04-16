@@ -1,2 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Circuit | v4.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>STUDY CIRCUIT ⚡</h1>
+        
+        <section class="card">
+            <h2 class="neon-purple">📈 PERFORMANCE: 6-1 WIN</h2>
+            <div class="progress-bg"><div class="progress-fill" id="tennis-bar"></div></div>
+            <p id="stats-text" style="font-size: 0.8rem; margin-top: 10px;">ANALYZING...</p>
+        </section>
+
+        <section class="card clickable" onclick="openCalendar()">
+            <h2 class="neon-blue">📅 DEADLINES (TAP TO VIEW)</h2>
+            <p class="pulse" id="math-timer">>> Loading Timer...</p>
+        </section>
+
+        <section class="card">
+            <h2 class="neon-green">📝 MISSION CONTROL</h2>
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="New mission...">
+                <button onclick="addTask()">ADD</button>
+            </div>
+            <ul id="task-list"></ul>
+        </section>
+
+        <section class="card status-bar">
+            <p>STATUS: <span class="success">HIGH FOCUS</span> | TIKTOK: <span class="danger">OFFLINE</span></p>
+        </section>
+    </div>
+
+    <div id="calendar-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCalendar()">&times;</span>
+            <h2 class="neon-blue">WEEKLY CIRCUIT</h2>
+            <div class="calendar-grid">
+                <div class="day">M<br>Math</div>
+                <div class="day" style="color:#bc8cff">T<br>Ten</div>
+                <div class="day">W<br>Code</div>
+                <div class="day" style="color:#bc8cff">T<br>Ten</div>
+                <div class="day">F<br>JMUN</div>
+                <div class="day" style="color:#bc8cff">S<br>Ten</div>
+                <div class="day" style="color:#bc8cff">S<br>Ten</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
 
