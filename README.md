@@ -1,2 +1,2 @@
 # codingiscool112.github.io
-Made to teach and help students.
+Study Circuit: A New Way for Productivity
