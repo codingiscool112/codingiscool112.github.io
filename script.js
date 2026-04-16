@@ -1,26 +1,40 @@
-let myClasses = JSON.parse(localStorage.getItem('studySphereClasses')) || [];
-displayClasses();
-function addClass() {
-  const input = document.getElementById('classInput');
-  const className = input.value.trim();
-  if (className !=="") {
-    myClasses.push(className);
-    input.value = "";
-    saveAndRefresh();
-  }
+// 1. SET YOUR DATES HERE
+const MATH_TEST = new Date("May 1, 2024 09:00:00").getTime();
+const JMUN_CONF = new Date("May 15, 2024 08:00:00").getTime();
+
+// 2. COUNTDOWN LOGIC
+function updateTimers() {
+    const now = new Date().getTime();
+
+    function calculate(target, elementId, label) {
+        const diff = target - now;
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById(elementId).innerText = `${days} Days until ${label}`;
+    }
+
+    calculate(MATH_TEST, "math-timer", "Math Quiz");
+    calculate(JMUN_CONF, "jmun-timer", "JMUN Legal Committee");
 }
-function saveAndRefresh() {
-  localStorage.setItem('studySphereClasses', JSON.stringify(myClasses));
-  displayClasses();
+
+// 3. QUIZ LOGIC
+const legalQuiz = {
+    q: "A neutral ship can be seized if it carries 'Dual-Use' goods like sugar for explosives.",
+    a: true
+};
+
+document.getElementById('question').innerText = legalQuiz.q;
+
+function checkAnswer(choice) {
+    const feedback = document.getElementById('feedback');
+    if (choice === legalQuiz.a) {
+        feedback.innerText = "ACCESS GRANTED: Logic Correct.";
+        feedback.className = "success";
+    } else {
+        feedback.innerText = "ACCESS DENIED: Review Legal Code.";
+        feedback.className = "danger";
+    }
 }
-function displayClasses() {
-  const question = document.getElementById('classList');
-  listDiv.innerHTML += '<article class="class-card">${className}<article>`;
-});
-}
-function askAI() {
-  const question = document.getElementById('chatInput').value;
-  const responseDiv = document.getElementById('chatResponse');
-  if (myClasses.length === 0) {
-    responseDiv.style.display = "block";
-    responseDiv.innerHTML = `<strong>Bot:</strong> "Since you're taking ${myClasses.join(' and ')}, I'd suggest starting with a quick review of ${myClasses0} for your question: '${question} '"`:
+
+// 4. RUN ON LOAD
+setInterval(updateTimers, 1000);
+document.getElementById('date-display').innerText = new Date().toDateString();
