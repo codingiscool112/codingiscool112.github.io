@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Circuit | v3.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>STUDY CIRCUIT <span class="blink">_</span></h1>
+            <p id="live-date" class="neon-blue"></p>
+        </header>
+
+        <!-- TENNIS DATA -->
+        <section class="card">
+            <h2 class="neon-purple">📈 PERFORMANCE METRICS</h2>
+            <p id="stats-text">Analyzing latest match...</p>
+            <div class="progress-bg">
+                <div class="progress-fill" id="tennis-bar"></div>
+            </div>
+        </section>
+
+        <!-- DEADLINES (CLICKABLE) -->
+        <section class="card clickable" onclick="openCalendar()">
+            <h2 class="neon-blue">📅 CIRCUIT DEADLINES (Tap to View)</h2>
+            <p id="math-timer" class="pulse">-- Days until Math Quiz</p>
+            <p id="jmun-timer">-- Days until JMUN Legal Committee</p>
+        </section>
+
+        <!-- INTERACTIVE QUIZ -->
+        <section class="card">
+            <h2 class="neon-green">🧠 LOGIC CIRCUIT</h2>
+            <div id="quiz-area">
+                <p id="question">Initializing first challenge...</p>
+                <div class="btn-group">
+                    <button onclick="handleChoice(true)">TRUE</button>
+                    <button onclick="handleChoice(false)">FALSE</button>
+                </div>
+                <p id="feedback"></p>
+            </div>
+        </section>
+
+        <!-- SYSTEM STATUS -->
+        <section class="card">
+            <h2 class="neon-green">🛠️ SYSTEM STATUS</h2>
+            <div class="status-grid">
+                <p>TIKTOK: <span class="danger">OFFLINE</span></p>
+                <p>FOCUS: <span class="success">HIGH</span></p>
+                <p>STREAK: <span class="success">DAY 3</span></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- CALENDAR MODAL (HIDDEN BY DEFAULT) -->
+    <div id="calendar-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCalendar()">&times;</span>
+            <h2 class="neon-blue">SYSTEM CALENDAR</h2>
+            <div class="calendar-grid">
+                <div class="day">Mon<br><span>Math</span></div>
+                <div class="day">Tue<br><span class="neon-purple">Tennis</span></div>
+                <div class="day">Wed<br><span>Code</span></div>
+                <div class="day">Thu<br><span class="neon-purple">Tennis</span></div>
+                <div class="day">Fri<br><span>JMUN</span></div>
+                <div class="day">Sat<br><span class="neon-purple">Tennis</span></div>
+                <div class="day">Sun<br><span class="neon-purple">Tennis</span></div>
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #888;">* 4/7 Tennis Block Active</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
